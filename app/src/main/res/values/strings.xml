@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="my_name">학번</string>
+    <string name="my_passsword">비밀번호</string>
+    <string name="my_login">로그인</string>
+    <string name="contentDescription">washerOfDeath</string>
+</resources>
