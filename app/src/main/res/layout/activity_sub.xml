@@ -9,6 +9,7 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+<<<<<<< HEAD
 
     <SlidingDrawer
         android:id="@+id/slidingdrawer"
@@ -44,4 +45,6 @@
 
     </SlidingDrawer>
 
+=======
+>>>>>>> 19ff11b72fa74db2b9d07466486a3707093649e5
 </LinearLayout>
