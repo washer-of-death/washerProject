@@ -4,8 +4,5 @@
     <string name="my_passsword">비밀번호</string>
     <string name="my_login">로그인</string>
     <string name="contentDescription">washerOfDeath</string>
-<<<<<<< HEAD
     <string name="my_que">이곳에 도움말 구현</string>
-=======
->>>>>>> 19ff11b72fa74db2b9d07466486a3707093649e5
 </resources>
