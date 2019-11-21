@@ -17,7 +17,7 @@ public class SubActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sub);
         TextView nameText = (TextView) findViewById(R.id.nameText);
         Intent intent = getIntent();
-        nameText.setText(intent.getStringExtra("nameText").toString());
+        nameText.setText("hjkjk");
 
         txtResult = (TextView)findViewById(R.id.txtResult);
     }

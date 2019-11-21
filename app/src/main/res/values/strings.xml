@@ -3,6 +3,8 @@
     <string name="my_name">학번</string>
     <string name="my_passsword">비밀번호</string>
     <string name="my_login">로그인</string>
+    <string name="my_textview">text view</string>
+    <string name="my_popupbutton">팝업</string>
     <string name="contentDescription">washerOfDeath</string>
     <string name="my_que">이곳에 도움말 구현</string>
 </resources>
