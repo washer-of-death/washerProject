@@ -6,11 +6,10 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 public class PopupActivity extends Activity {
-
-    TextView txtText;
+    ImageView imgHelp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,21 +19,15 @@ public class PopupActivity extends Activity {
         setContentView(R.layout.activity_popup);
 
         //UI 객체생성
-        txtText = (TextView)findViewById(R.id.txtText);
+        imgHelp = (ImageView) findViewById(R.id.imgHelp);
 
         //데이터 가져오기
         Intent intent = getIntent();
-        String data = intent.getStringExtra("data");
-        txtText.setText(data);
+        imgHelp.setImageResource(R.drawable.help);
     }
 
     //확인 버튼 클릭
     public void mOnClose(View v){
-        //데이터 전달하기
-        Intent intent = new Intent();
-        intent.putExtra("result", "Close Popup");
-        setResult(RESULT_OK, intent);
-
         //액티비티(팝업) 닫기
         finish();
     }
