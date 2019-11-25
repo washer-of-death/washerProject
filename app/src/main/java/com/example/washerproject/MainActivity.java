@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     public void login() {
         String username = nameText.getText().toString().trim();
         String pass = passText.getText().toString().trim();
-        if(username.equals("2018038017") && pass.equals("1234567")){
+        if(username.equals("") && pass.equals("")){
             Toast.makeText(this, "로그인 성공!",Toast.LENGTH_LONG).show();
             String name = nameText.getText().toString();
             Intent intent = new Intent(getApplicationContext(), SubActivity.class);
