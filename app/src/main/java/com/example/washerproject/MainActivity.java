@@ -1,7 +1,10 @@
 package com.example.washerproject;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -12,14 +15,26 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class MainActivity extends AppCompatActivity {
     EditText nameText, passText;
-    Button nameButton;
+    Button nameButton, signup;
+    String url;
     // 마지막으로 뒤로가기 버튼을 눌렀던 시간 저장
     private long backKeyPressedTime = 0;
     // 첫 번째 뒤로가기 버튼을 누를때 표시
     private Toast toast;
-
+    String user_id, user_password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,28 +43,66 @@ public class MainActivity extends AppCompatActivity {
         nameText = (EditText) findViewById(R.id.nameText);
         passText = (EditText) findViewById(R.id.passwordText);
         nameButton = (Button) findViewById(R.id.nameButton);
+        signup = (Button)findViewById(R.id.signup);
 
         nameButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
-                login();
-            }
+            public void onClick(View v) {
+                user_id = nameText.getText().toString();
+                user_password = passText.getText().toString();
 
+                if (user_id.isEmpty() || user_password.isEmpty()) {
+                    Toast.makeText(MainActivity.this, "fill details", Toast.LENGTH_SHORT).show();
+
+                }
+                else {
+                    login(user_id, user_password);
+                }
+            }
+        });
+
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Signup.class);
+                startActivity(intent);
+            }
         });
     }
-    public void login() {
-        String username = nameText.getText().toString().trim();
-        String pass = passText.getText().toString().trim();
-        if(username.equals("") && pass.equals("")){
-            Toast.makeText(this, "로그인 성공!",Toast.LENGTH_LONG).show();
-            String name = nameText.getText().toString();
-            Intent intent = new Intent(getApplicationContext(), SubActivity.class);
-            intent.putExtra("nameText",name);
-            startActivity(intent);
-        } else{
-            Toast.makeText(this, "로그인 실패!", Toast.LENGTH_LONG).show();
-        }
+    public void login(final String user, final String pass){
+        url = "https://scv0319.cafe24.com/songi/login.php?userid="+user+"&userpassword="+pass+"";
+        Log.i("Hiteshurl",""+url);
+        RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    JSONArray jsonArray = jsonObject.getJSONArray("result");
+                    JSONObject jsonObject1 = jsonArray.getJSONObject(0);
+                    String userid2 = jsonObject1.getString("userid");
+                    String userpassword2 = jsonObject1.getString("userpassword");
+                    SharedPreferences shared = getSharedPreferences("Mypref", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = shared.edit();
+                    editor.putString("userid",userid2);
+                    editor.putString("userpassword",userpassword2);
+                    editor.commit();
+                    Intent intent = new Intent(MainActivity.this,SubActivity.class);
+                    startActivity(intent);
+                }
+                catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.i("HiteshURLerror",""+error);
+            }
+        });
+        requestQueue.add(stringRequest);
     }
+
     @Override
     public void onBackPressed() {
 

@@ -17,26 +17,26 @@
             android:layout_marginRight="40dp"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/button5"
+            <ImageView
+                android:id="@+id/button1"
                 android:layout_width="98dp"
                 android:layout_height="80dp"
                 android:background="@drawable/whasherusi"
-                android:text="Button" />
+                />
 
-            <Button
-                android:id="@+id/button6"
+            <ImageView
+                android:id="@+id/button2"
                 android:layout_width="98dp"
                 android:layout_height="80dp"
                 android:background="@drawable/whasherusi"
-                android:text="Button" />
+                />
 
-            <Button
-                android:id="@+id/button4"
+            <ImageView
+                android:id="@+id/button3"
                 android:layout_width="98dp"
                 android:layout_height="80dp"
                 android:background="@drawable/whasherusi"
-                android:text="Button" />
+                />
 
         </LinearLayout>
         <Button
@@ -65,44 +65,44 @@
             android:layout_marginLeft="7dp"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/button7"
+            <ImageView
+                android:id="@+id/button4"
                 android:layout_width="98dp"
                 android:layout_height="80dp"
                 android:background="@drawable/whasherusi"
-                android:text="Button" />
+                />
 
-            <Button
+            <ImageView
+                android:id="@+id/button5"
+                android:layout_width="98dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/whasherusi"
+                />
+
+            <ImageView
+                android:id="@+id/button6"
+                android:layout_width="98dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/whasherusi"
+                />
+
+            <ImageView
+                android:id="@+id/button7"
+                android:layout_width="98dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/whasherusi"
+                />
+
+            <ImageView
                 android:id="@+id/button8"
                 android:layout_width="98dp"
                 android:layout_height="80dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/whasherusi"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button9"
-                android:layout_width="98dp"
-                android:layout_height="80dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/whasherusi"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button13"
-                android:layout_width="98dp"
-                android:layout_height="80dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/whasherusi"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button14"
-                android:layout_width="98dp"
-                android:layout_height="80dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/whasherusi"
-                android:text="Button" />
+                />
 
         </LinearLayout>
 
@@ -113,44 +113,44 @@
             android:orientation="vertical"
             android:layout_marginLeft="205dp">
 
-            <Button
-                android:id="@+id/button10"
+            <ImageView
+                android:id="@+id/button9"
                 android:layout_width="98dp"
                 android:layout_height="80dp"
                 android:background="@drawable/dryusi"
-                android:text="Button" />
+                />
 
-            <Button
+            <ImageView
+                android:id="@+id/button10"
+                android:layout_width="98dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/dryusi"
+                />
+
+            <ImageView
                 android:id="@+id/button11"
                 android:layout_width="98dp"
                 android:layout_height="80dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/dryusi"
-                android:text="Button" />
+                />
 
-            <Button
+            <ImageView
                 android:id="@+id/button12"
                 android:layout_width="98dp"
                 android:layout_height="80dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/dryusi"
-                android:text="Button" />
+                />
 
-            <Button
-                android:id="@+id/button16"
+            <ImageView
+                android:id="@+id/button13"
                 android:layout_width="98dp"
                 android:layout_height="80dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/dryusi"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button17"
-                android:layout_width="98dp"
-                android:layout_height="80dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/dryusi"
-                android:text="Button" />
+                />
 
         </LinearLayout>
 

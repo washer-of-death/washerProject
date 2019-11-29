@@ -60,6 +60,17 @@
             tools:ignore="LabelFor"
             tools:targetApi="o" />
 
+        <Button
+            android:id="@+id/signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            android:importantForAutofill="no"
+            android:text="@string/my_login"
+            tools:ignore="LabelFor"
+            tools:targetApi="o" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
