@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     String url;
     // 마지막으로 뒤로가기 버튼을 눌렀던 시간 저장
     private long backKeyPressedTime = 0;
-    // 첫 번째 뒤로가기 버튼을 누를때 표시
+    // 첫 번째 뒤로가기 버튼을 누를 때 표시
     private Toast toast;
     String user_id, user_password;
     @Override
@@ -88,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
                     editor.putString("userpassword",userpassword2);
                     editor.commit();
                     Intent intent = new Intent(MainActivity.this,SubActivity.class);
+                    Toast.makeText(getApplicationContext(), "로그인 성공!" , Toast.LENGTH_SHORT).show();
                     startActivity(intent);
                 }
                 catch (JSONException e) {

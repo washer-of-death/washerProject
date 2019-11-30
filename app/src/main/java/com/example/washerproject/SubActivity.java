@@ -77,10 +77,10 @@ public class SubActivity extends AppCompatActivity {
             public void onClick(View v) {
                 alertDialog = new AlertDialog.Builder(SubActivity.this).create();
 
-                alertDialog.setTitle("세탁기");
-                alertDialog.setMessage("세탁기를 사용하시겠습니까?");
+                alertDialog.setTitle("사용 등록");
+                alertDialog.setMessage("'세탁기 6번'을 사용하시겠습니까?");
                 alertDialog.setCancelable(false);
-                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "아니오", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button1.setImageResource(R.drawable.whasherusi);
@@ -88,7 +88,7 @@ public class SubActivity extends AppCompatActivity {
                     }
                 });
 
-                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "예", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button1.setImageResource(R.drawable.washeru);
@@ -106,10 +106,10 @@ public class SubActivity extends AppCompatActivity {
             public void onClick(View v) {
                 alertDialog = new AlertDialog.Builder(SubActivity.this).create();
 
-                alertDialog.setTitle("세탁기");
-                alertDialog.setMessage("세탁기를 사용하시겠습니까?");
+                alertDialog.setTitle("사용 등록");
+                alertDialog.setMessage("'세탁기 7번'을 사용하시겠습니까?");
                 alertDialog.setCancelable(false);
-                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "아니오", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button2.setImageResource(R.drawable.whasherusi);
@@ -117,7 +117,7 @@ public class SubActivity extends AppCompatActivity {
                     }
                 });
 
-                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "예", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button2.setImageResource(R.drawable.washeru);
@@ -135,10 +135,10 @@ public class SubActivity extends AppCompatActivity {
             public void onClick(View v) {
                 alertDialog = new AlertDialog.Builder(SubActivity.this).create();
 
-                alertDialog.setTitle("세탁기");
-                alertDialog.setMessage("세탁기를 사용하시겠습니까?");
+                alertDialog.setTitle("사용 등록");
+                alertDialog.setMessage("'세탁기 8번'을 사용하시겠습니까?");
                 alertDialog.setCancelable(false);
-                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "아니오", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button3.setImageResource(R.drawable.whasherusi);
@@ -146,7 +146,7 @@ public class SubActivity extends AppCompatActivity {
                     }
                 });
 
-                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "예", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button3.setImageResource(R.drawable.washeru);
@@ -163,10 +163,10 @@ public class SubActivity extends AppCompatActivity {
             public void onClick(View v) {
                 alertDialog = new AlertDialog.Builder(SubActivity.this).create();
 
-                alertDialog.setTitle("세탁기");
-                alertDialog.setMessage("세탁기를 사용하시겠습니까?");
+                alertDialog.setTitle("사용 등록");
+                alertDialog.setMessage("'세탁기 5번'을 사용하시겠습니까?");
                 alertDialog.setCancelable(false);
-                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "아니오", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button4.setImageResource(R.drawable.whasherusi);
@@ -174,7 +174,7 @@ public class SubActivity extends AppCompatActivity {
                     }
                 });
 
-                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "예", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button4.setImageResource(R.drawable.washeru);
@@ -191,10 +191,10 @@ public class SubActivity extends AppCompatActivity {
             public void onClick(View v) {
                 alertDialog = new AlertDialog.Builder(SubActivity.this).create();
 
-                alertDialog.setTitle("세탁기");
-                alertDialog.setMessage("세탁기를 사용하시겠습니까?");
+                alertDialog.setTitle("사용 등록");
+                alertDialog.setMessage("'세탁기 4번'을 사용하시겠습니까?");
                 alertDialog.setCancelable(false);
-                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "아니오", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button5.setImageResource(R.drawable.whasherusi);
@@ -202,7 +202,7 @@ public class SubActivity extends AppCompatActivity {
                     }
                 });
 
-                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "예", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button5.setImageResource(R.drawable.washeru);
@@ -219,10 +219,10 @@ public class SubActivity extends AppCompatActivity {
             public void onClick(View v) {
                 alertDialog = new AlertDialog.Builder(SubActivity.this).create();
 
-                alertDialog.setTitle("세탁기");
-                alertDialog.setMessage("세탁기를 사용하시겠습니까?");
+                alertDialog.setTitle("사용 등록");
+                alertDialog.setMessage("'세탁기 3번'을 사용하시겠습니까?");
                 alertDialog.setCancelable(false);
-                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "아니오", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button6.setImageResource(R.drawable.whasherusi);
@@ -230,7 +230,7 @@ public class SubActivity extends AppCompatActivity {
                     }
                 });
 
-                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "예", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button6.setImageResource(R.drawable.washeru);
@@ -247,10 +247,10 @@ public class SubActivity extends AppCompatActivity {
             public void onClick(View v) {
                 alertDialog = new AlertDialog.Builder(SubActivity.this).create();
 
-                alertDialog.setTitle("세탁기");
-                alertDialog.setMessage("세탁기를 사용하시겠습니까?");
+                alertDialog.setTitle("사용 등록");
+                alertDialog.setMessage("'세탁기 2번'을 사용하시겠습니까?");
                 alertDialog.setCancelable(false);
-                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "아니오", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button7.setImageResource(R.drawable.whasherusi);
@@ -258,7 +258,7 @@ public class SubActivity extends AppCompatActivity {
                     }
                 });
 
-                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "예", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button7.setImageResource(R.drawable.washeru);
@@ -275,10 +275,10 @@ public class SubActivity extends AppCompatActivity {
             public void onClick(View v) {
                 alertDialog = new AlertDialog.Builder(SubActivity.this).create();
 
-                alertDialog.setTitle("세탁기");
-                alertDialog.setMessage("세탁기를 사용하시겠습니까?");
+                alertDialog.setTitle("사용 등록");
+                alertDialog.setMessage("'세탁기 1번'을 사용하시겠습니까?");
                 alertDialog.setCancelable(false);
-                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "아니오", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button8.setImageResource(R.drawable.whasherusi);
@@ -286,7 +286,7 @@ public class SubActivity extends AppCompatActivity {
                     }
                 });
 
-                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "예", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button8.setImageResource(R.drawable.washeru);
@@ -303,10 +303,10 @@ public class SubActivity extends AppCompatActivity {
             public void onClick(View v) {
                 alertDialog = new AlertDialog.Builder(SubActivity.this).create();
 
-                alertDialog.setTitle("세탁기");
-                alertDialog.setMessage("세탁기를 사용하시겠습니까?");
+                alertDialog.setTitle("사용 등록");
+                alertDialog.setMessage("'건조기 1번'을 사용하시겠습니까?");
                 alertDialog.setCancelable(false);
-                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "아니오", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button9.setImageResource(R.drawable.dryusi);
@@ -314,7 +314,7 @@ public class SubActivity extends AppCompatActivity {
                     }
                 });
 
-                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "예", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button9.setImageResource(R.drawable.dryu);
@@ -331,10 +331,10 @@ public class SubActivity extends AppCompatActivity {
             public void onClick(View v) {
                 alertDialog = new AlertDialog.Builder(SubActivity.this).create();
 
-                alertDialog.setTitle("세탁기");
-                alertDialog.setMessage("세탁기를 사용하시겠습니까?");
+                alertDialog.setTitle("사용 등록");
+                alertDialog.setMessage("'건조기 2번'을 사용하시겠습니까?");
                 alertDialog.setCancelable(false);
-                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "아니오", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button10.setImageResource(R.drawable.dryusi);
@@ -342,7 +342,7 @@ public class SubActivity extends AppCompatActivity {
                     }
                 });
 
-                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "예", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button10.setImageResource(R.drawable.dryu);
@@ -359,10 +359,10 @@ public class SubActivity extends AppCompatActivity {
             public void onClick(View v) {
                 alertDialog = new AlertDialog.Builder(SubActivity.this).create();
 
-                alertDialog.setTitle("세탁기");
-                alertDialog.setMessage("세탁기를 사용하시겠습니까?");
+                alertDialog.setTitle("사용 등록");
+                alertDialog.setMessage("'건조기 3번'을 사용하시겠습니까?");
                 alertDialog.setCancelable(false);
-                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "아니오", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button11.setImageResource(R.drawable.dryusi);
@@ -370,7 +370,7 @@ public class SubActivity extends AppCompatActivity {
                     }
                 });
 
-                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "예", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button11.setImageResource(R.drawable.dryu);
@@ -387,10 +387,10 @@ public class SubActivity extends AppCompatActivity {
             public void onClick(View v) {
                 alertDialog = new AlertDialog.Builder(SubActivity.this).create();
 
-                alertDialog.setTitle("세탁기");
-                alertDialog.setMessage("세탁기를 사용하시겠습니까?");
+                alertDialog.setTitle("사용 등록");
+                alertDialog.setMessage("'건조기 4번'을 사용하시겠습니까?");
                 alertDialog.setCancelable(false);
-                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "아니오", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button12.setImageResource(R.drawable.dryusi);
@@ -398,7 +398,7 @@ public class SubActivity extends AppCompatActivity {
                     }
                 });
 
-                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "예", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button12.setImageResource(R.drawable.dryu);
@@ -415,10 +415,10 @@ public class SubActivity extends AppCompatActivity {
             public void onClick(View v) {
                 alertDialog = new AlertDialog.Builder(SubActivity.this).create();
 
-                alertDialog.setTitle("세탁기");
-                alertDialog.setMessage("세탁기를 사용하시겠습니까?");
+                alertDialog.setTitle("사용 등록");
+                alertDialog.setMessage("'건조기 5번'을 사용하시겠습니까?");
                 alertDialog.setCancelable(false);
-                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "아니오", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button13.setImageResource(R.drawable.dryusi);
@@ -426,7 +426,7 @@ public class SubActivity extends AppCompatActivity {
                     }
                 });
 
-                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "예", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button13.setImageResource(R.drawable.dryu);
@@ -588,7 +588,7 @@ public class SubActivity extends AppCompatActivity {
             //9번 세탁기 상태
 
             if(washerSTATE[8]==0){
-                button9.setImageResource(R.drawable.whasherusi);
+                button9.setImageResource(R.drawable.dryusi);
             }
             else{
                 button9.setImageResource(R.drawable.dryu);
@@ -596,7 +596,7 @@ public class SubActivity extends AppCompatActivity {
             }
             //10번 세탁기 상태
             if(washerSTATE[9]==0){
-                button10.setImageResource(R.drawable.whasherusi);
+                button10.setImageResource(R.drawable.dryusi);
             }
             else{
                 button10.setImageResource(R.drawable.dryu);
@@ -604,7 +604,7 @@ public class SubActivity extends AppCompatActivity {
             }
             //11번 세탁기 상태
             if(washerSTATE[10]==0){
-                button11.setImageResource(R.drawable.whasherusi);
+                button11.setImageResource(R.drawable.dryusi);
             }
             else{
                 button11.setImageResource(R.drawable.dryu);
@@ -612,7 +612,7 @@ public class SubActivity extends AppCompatActivity {
             }
             //12번 세탁기 상태
             if(washerSTATE[11]==0){
-                button12.setImageResource(R.drawable.whasherusi);
+                button12.setImageResource(R.drawable.dryusi);
             }
             else{
                 button12.setImageResource(R.drawable.dryu);
@@ -620,7 +620,7 @@ public class SubActivity extends AppCompatActivity {
             }
             //13번 세탁기 상태
             if(washerSTATE[12]==0){
-                button13.setImageResource(R.drawable.whasherusi);
+                button13.setImageResource(R.drawable.dryusi);
             }
             else{
                 button13.setImageResource(R.drawable.dryu);
