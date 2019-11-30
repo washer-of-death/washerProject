@@ -5,12 +5,33 @@ import androidx.core.app.ActivityCompat;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SubActivity extends AppCompatActivity {
     AlertDialog alertDialog;
@@ -18,12 +39,21 @@ public class SubActivity extends AppCompatActivity {
     private long backKeyPressedTime = 0;
     // 첫 번째 뒤로가기 버튼을 누를때 표시
     private Toast toast;
-
+    SharedPreferences shared;
     ImageView button1,button2,button3,button4,button5,button6,button7,button8,button9,button10,button11,button12,button13;
+    String userid;
+    String washer_num= "0";
+    String myJSON;
+    int [] washerSTATE = new int[13];
+    String url2;
+
     @Override
     protected void onCreate(Bundle bundle){
         super.onCreate(bundle);
         setContentView(R.layout.activity_sub);
+
+        shared = getSharedPreferences("Mypref", MODE_PRIVATE);
+        userid = shared.getString("userid", "");
 
         button1 = (ImageView)findViewById(R.id.button1);
         button2 = (ImageView)findViewById(R.id.button2);
@@ -39,7 +69,8 @@ public class SubActivity extends AppCompatActivity {
         button12 = (ImageView)findViewById(R.id.button12);
         button13 = (ImageView)findViewById(R.id.button13);
 
-
+        url2 ="https://scv0319.cafe24.com/songi/washer_DefaultState.php";
+        getData(url2);
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,11 +92,15 @@ public class SubActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button1.setImageResource(R.drawable.washeru);
+                        washer_num = "1";
+                        button1.setEnabled(false);
+                        change_state(userid, washer_num);
                     }
                 });
                 alertDialog.show();
             }
         });
+
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,6 +121,10 @@ public class SubActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button2.setImageResource(R.drawable.washeru);
+                        washer_num = "2";
+                        button2.setEnabled(false);
+                        change_state(userid, washer_num);
+
                     }
                 });
                 alertDialog.show();
@@ -111,6 +150,9 @@ public class SubActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button3.setImageResource(R.drawable.washeru);
+                        washer_num = "3";
+                        button3.setEnabled(false);
+                        change_state(userid, washer_num);
                     }
                 });
                 alertDialog.show();
@@ -136,6 +178,9 @@ public class SubActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button4.setImageResource(R.drawable.washeru);
+                        washer_num = "4";
+                        button4.setEnabled(false);
+                        change_state(userid, washer_num);
                     }
                 });
                 alertDialog.show();
@@ -161,6 +206,9 @@ public class SubActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button5.setImageResource(R.drawable.washeru);
+                        washer_num = "5";
+                        button5.setEnabled(false);
+                        change_state(userid, washer_num);
                     }
                 });
                 alertDialog.show();
@@ -186,6 +234,9 @@ public class SubActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button6.setImageResource(R.drawable.washeru);
+                        washer_num = "6";
+                        button6.setEnabled(false);
+                        change_state(userid, washer_num);
                     }
                 });
                 alertDialog.show();
@@ -211,6 +262,9 @@ public class SubActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button7.setImageResource(R.drawable.washeru);
+                        washer_num = "7";
+                        button7.setEnabled(false);
+                        change_state(userid, washer_num);
                     }
                 });
                 alertDialog.show();
@@ -236,6 +290,9 @@ public class SubActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button8.setImageResource(R.drawable.washeru);
+                        washer_num = "8";
+                        button8.setEnabled(false);
+                        change_state(userid, washer_num);
                     }
                 });
                 alertDialog.show();
@@ -261,6 +318,9 @@ public class SubActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button9.setImageResource(R.drawable.dryu);
+                        washer_num = "9";
+                        button9.setEnabled(false);
+                        change_state(userid, washer_num);
                     }
                 });
                 alertDialog.show();
@@ -286,6 +346,9 @@ public class SubActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button10.setImageResource(R.drawable.dryu);
+                        washer_num = "10";
+                        button10.setEnabled(false);
+                        change_state(userid, washer_num);
                     }
                 });
                 alertDialog.show();
@@ -311,6 +374,9 @@ public class SubActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button11.setImageResource(R.drawable.dryu);
+                        washer_num = "11";
+                        button11.setEnabled(false);
+                        change_state(userid, washer_num);
                     }
                 });
                 alertDialog.show();
@@ -336,6 +402,9 @@ public class SubActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button12.setImageResource(R.drawable.dryu);
+                        washer_num = "12";
+                        button12.setEnabled(false);
+                        change_state(userid, washer_num);
                     }
                 });
                 alertDialog.show();
@@ -361,6 +430,9 @@ public class SubActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         button13.setImageResource(R.drawable.dryu);
+                        washer_num = "13";
+                        button13.setEnabled(false);
+                        change_state(userid, washer_num);
                     }
                 });
                 alertDialog.show();
@@ -402,5 +474,197 @@ public class SubActivity extends AppCompatActivity {
             System.exit(0);
             toast.cancel();
         }
+    }
+
+    public void change_state(final String userid, final String washer_num){
+        RequestQueue requestQueue = Volley.newRequestQueue(SubActivity.this);
+        String url = "https://scv0319.cafe24.com/songi/change_state.php";
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.i("Hitesh",""+response);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.i("Hitesh",""+error);
+                Toast.makeText(SubActivity.this, ""+error, Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> stringMap = new HashMap<>();
+                stringMap.put("userid",userid);
+                stringMap.put("washer_num", washer_num);
+                return stringMap;
+            }
+        };
+        requestQueue.add(stringRequest);
+    }
+
+    public void showList(){
+        try{
+            JSONObject jsonObject = new JSONObject(myJSON);
+            JSONArray jsonArray = jsonObject.getJSONArray("response");
+
+            int count = 0;
+
+            //JSON 배열 길이만큼 반복문을 실행
+            while(count < jsonArray.length()){
+                JSONObject object = jsonArray.getJSONObject(count);
+                washerSTATE[count] = object.getInt("washerSTATE");
+                System.out.println("state"+count +": " + washerSTATE[count]);
+                count++;
+            }
+            //1번 세탁기 상태
+            if(washerSTATE[0]==0){
+                button1.setImageResource(R.drawable.whasherusi);
+            }
+            else{
+                button1.setImageResource(R.drawable.washeru);
+                button1.setEnabled(false);
+            }
+
+            //2번 세탁기 상태
+            if(washerSTATE[1]==0){
+                button2.setImageResource(R.drawable.whasherusi);
+            }
+            else{
+                button2.setImageResource(R.drawable.washeru);
+                button2.setEnabled(false);
+            }
+
+            //3번 세탁기 상태
+            if(washerSTATE[2]==0){
+                button3.setImageResource(R.drawable.whasherusi);
+            }
+            else{
+                button3.setImageResource(R.drawable.washeru);
+                button3.setEnabled(false);
+            }
+
+            //4번 세탁기 상태
+            if(washerSTATE[3]==0){
+                button4.setImageResource(R.drawable.whasherusi);
+            }
+            else{
+                button4.setImageResource(R.drawable.washeru);
+                button4.setEnabled(false);
+            }
+
+            //5번 세탁기 상태
+            if(washerSTATE[4]==0){
+                button5.setImageResource(R.drawable.whasherusi);
+            }
+            else{
+                button5.setImageResource(R.drawable.washeru);
+                button5.setEnabled(false);
+            }
+
+            //6번 세탁기 상태
+            if(washerSTATE[5]==0){
+                button6.setImageResource(R.drawable.whasherusi);
+            }
+            else{
+                button6.setImageResource(R.drawable.washeru);
+                button6.setEnabled(false);
+            }
+            //7번 세탁기 상태
+            if(washerSTATE[6]==0){
+                button7.setImageResource(R.drawable.whasherusi);
+            }
+            else{
+                button7.setImageResource(R.drawable.washeru);
+                button7.setEnabled(false);
+            }
+            //8번 세탁기 상태
+            if(washerSTATE[7]==0){
+                button8.setImageResource(R.drawable.whasherusi);
+            }
+            else{
+                button8.setImageResource(R.drawable.washeru);
+                button8.setEnabled(false);
+            }
+            //9번 세탁기 상태
+
+            if(washerSTATE[8]==0){
+                button9.setImageResource(R.drawable.whasherusi);
+            }
+            else{
+                button9.setImageResource(R.drawable.dryu);
+                button9.setEnabled(false);
+            }
+            //10번 세탁기 상태
+            if(washerSTATE[9]==0){
+                button10.setImageResource(R.drawable.whasherusi);
+            }
+            else{
+                button10.setImageResource(R.drawable.dryu);
+                button10.setEnabled(false);
+            }
+            //11번 세탁기 상태
+            if(washerSTATE[10]==0){
+                button11.setImageResource(R.drawable.whasherusi);
+            }
+            else{
+                button11.setImageResource(R.drawable.dryu);
+                button11.setEnabled(false);
+            }
+            //12번 세탁기 상태
+            if(washerSTATE[11]==0){
+                button12.setImageResource(R.drawable.whasherusi);
+            }
+            else{
+                button12.setImageResource(R.drawable.dryu);
+                button12.setEnabled(false);
+            }
+            //13번 세탁기 상태
+            if(washerSTATE[12]==0){
+                button13.setImageResource(R.drawable.whasherusi);
+            }
+            else{
+                button13.setImageResource(R.drawable.dryu);
+                button13.setEnabled(false);
+            }
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void getData(String url) {
+        class GetDataJSON extends AsyncTask<String, Void, String> {
+
+            @Override
+            protected String doInBackground(String... params) {
+
+                String uri = params[0];
+
+                BufferedReader bufferedReader = null;
+                try {
+                    URL url = new URL(uri);
+                    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+                    StringBuilder sb = new StringBuilder();
+
+                    bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+                    String json;
+                    while ((json = bufferedReader.readLine()) != null) {
+                        sb.append(json + "\n");
+                    }
+                    return sb.toString().trim();
+
+                } catch (Exception e) {
+                    return null;
+                }
+            }
+            @Override
+            protected void onPostExecute(String result) {
+                myJSON = result;
+                showList();
+            }
+        }
+        GetDataJSON g = new GetDataJSON();
+        g.execute(url);
     }
 }
