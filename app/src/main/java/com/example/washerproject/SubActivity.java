@@ -588,7 +588,7 @@ public class SubActivity extends AppCompatActivity {
             //9번 세탁기 상태
 
             if(washerSTATE[8]==0){
-                button9.setImageResource(R.drawable.whasherusi);
+                button9.setImageResource(R.drawable.dryusi);
             }
             else{
                 button9.setImageResource(R.drawable.dryu);
@@ -596,7 +596,7 @@ public class SubActivity extends AppCompatActivity {
             }
             //10번 세탁기 상태
             if(washerSTATE[9]==0){
-                button10.setImageResource(R.drawable.whasherusi);
+                button10.setImageResource(R.drawable.dryusi);
             }
             else{
                 button10.setImageResource(R.drawable.dryu);
@@ -604,7 +604,7 @@ public class SubActivity extends AppCompatActivity {
             }
             //11번 세탁기 상태
             if(washerSTATE[10]==0){
-                button11.setImageResource(R.drawable.whasherusi);
+                button11.setImageResource(R.drawable.dryusi);
             }
             else{
                 button11.setImageResource(R.drawable.dryu);
@@ -612,7 +612,7 @@ public class SubActivity extends AppCompatActivity {
             }
             //12번 세탁기 상태
             if(washerSTATE[11]==0){
-                button12.setImageResource(R.drawable.whasherusi);
+                button12.setImageResource(R.drawable.dryusi);
             }
             else{
                 button12.setImageResource(R.drawable.dryu);
@@ -620,7 +620,7 @@ public class SubActivity extends AppCompatActivity {
             }
             //13번 세탁기 상태
             if(washerSTATE[12]==0){
-                button13.setImageResource(R.drawable.whasherusi);
+                button13.setImageResource(R.drawable.dryusi);
             }
             else{
                 button13.setImageResource(R.drawable.dryu);
