@@ -88,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
                     editor.putString("userpassword",userpassword2);
                     editor.commit();
                     Intent intent = new Intent(MainActivity.this,SubActivity.class);
+                    Toast.makeText(getApplicationContext(), "로그인 성공!" , Toast.LENGTH_SHORT).show();
                     startActivity(intent);
                 }
                 catch (JSONException e) {
