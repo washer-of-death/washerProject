@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     String url;
     // 마지막으로 뒤로가기 버튼을 눌렀던 시간 저장
     private long backKeyPressedTime = 0;
-    // 첫 번째 뒤로가기 버튼을 누를때 표시
+    // 첫 번째 뒤로가기 버튼을 누를 때 표시
     private Toast toast;
     String user_id, user_password;
     @Override
