@@ -276,7 +276,7 @@ public class SubActivity extends AppCompatActivity {
                 alertDialog = new AlertDialog.Builder(SubActivity.this).create();
 
                 alertDialog.setTitle("사용 등록");
-                alertDialog.setMessage("세탁기를 사용하시겠습니까?");
+                alertDialog.setMessage("'세탁기 1번'을 사용하시겠습니까?");
                 alertDialog.setCancelable(false);
                 alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "아니오", new DialogInterface.OnClickListener() {
                     @Override
@@ -304,7 +304,7 @@ public class SubActivity extends AppCompatActivity {
                 alertDialog = new AlertDialog.Builder(SubActivity.this).create();
 
                 alertDialog.setTitle("사용 등록");
-                alertDialog.setMessage("세탁기를 사용하시겠습니까?");
+                alertDialog.setMessage("'건조기 1번'을 사용하시겠습니까?");
                 alertDialog.setCancelable(false);
                 alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "아니오", new DialogInterface.OnClickListener() {
                     @Override
@@ -332,7 +332,7 @@ public class SubActivity extends AppCompatActivity {
                 alertDialog = new AlertDialog.Builder(SubActivity.this).create();
 
                 alertDialog.setTitle("사용 등록");
-                alertDialog.setMessage("세탁기를 사용하시겠습니까?");
+                alertDialog.setMessage("'건조기 2번'을 사용하시겠습니까?");
                 alertDialog.setCancelable(false);
                 alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "아니오", new DialogInterface.OnClickListener() {
                     @Override
@@ -360,7 +360,7 @@ public class SubActivity extends AppCompatActivity {
                 alertDialog = new AlertDialog.Builder(SubActivity.this).create();
 
                 alertDialog.setTitle("사용 등록");
-                alertDialog.setMessage("세탁기를 사용하시겠습니까?");
+                alertDialog.setMessage("'건조기 3번'을 사용하시겠습니까?");
                 alertDialog.setCancelable(false);
                 alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "아니오", new DialogInterface.OnClickListener() {
                     @Override
@@ -388,7 +388,7 @@ public class SubActivity extends AppCompatActivity {
                 alertDialog = new AlertDialog.Builder(SubActivity.this).create();
 
                 alertDialog.setTitle("사용 등록");
-                alertDialog.setMessage("세탁기를 사용하시겠습니까?");
+                alertDialog.setMessage("'건조기 4번'을 사용하시겠습니까?");
                 alertDialog.setCancelable(false);
                 alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "아니오", new DialogInterface.OnClickListener() {
                     @Override
@@ -416,7 +416,7 @@ public class SubActivity extends AppCompatActivity {
                 alertDialog = new AlertDialog.Builder(SubActivity.this).create();
 
                 alertDialog.setTitle("사용 등록");
-                alertDialog.setMessage("건조기를 사용하시겠습니까?");
+                alertDialog.setMessage("'건조기 5번'을 사용하시겠습니까?");
                 alertDialog.setCancelable(false);
                 alertDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "아니오", new DialogInterface.OnClickListener() {
                     @Override
