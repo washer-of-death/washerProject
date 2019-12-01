@@ -547,7 +547,7 @@ public class SubActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
-    public void washer_complete(final int washerSTATE, final String washer_num){
+    public void washer_complete(final String washer_num){
         RequestQueue requestQueue = Volley.newRequestQueue(SubActivity.this);
         String url = "https://scv0319.cafe24.com/songi/washer_Complete.php";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
@@ -565,7 +565,6 @@ public class SubActivity extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> stringMap = new HashMap<>();
-                stringMap.put("washerSTATE",Integer.toString(washerSTATE));
                 stringMap.put("washer_num", washer_num);
                 return stringMap;
             }
@@ -593,7 +592,7 @@ public class SubActivity extends AppCompatActivity {
                 if(now.getTime() >= washer_end.getTime()) {
                     //washerSTATE[count]를 0으로 바꾼다.
                     washerSTATE[count] = 0;
-                    washer_complete(washerSTATE[count], washer_num);
+                    washer_complete(Integer.toString(count));
                 }
                 count++;
             }
