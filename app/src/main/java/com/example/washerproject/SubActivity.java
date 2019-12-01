@@ -45,6 +45,7 @@ public class SubActivity extends AppCompatActivity {
     String washer_num= "0";
     String myJSON;
     int [] washerSTATE = new int[13];
+    String[] w_userID = new String[13];
     String url2;
 
     @Override
@@ -91,7 +92,7 @@ public class SubActivity extends AppCompatActivity {
                 alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "예", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        button1.setImageResource(R.drawable.washeru);
+                        button1.setImageResource(R.drawable.my);
                         washer_num = "1";
                         button1.setEnabled(false);
                         change_state(userid, washer_num);
@@ -120,7 +121,7 @@ public class SubActivity extends AppCompatActivity {
                 alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "예", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        button2.setImageResource(R.drawable.washeru);
+                        button2.setImageResource(R.drawable.my);
                         washer_num = "2";
                         button2.setEnabled(false);
                         change_state(userid, washer_num);
@@ -149,7 +150,7 @@ public class SubActivity extends AppCompatActivity {
                 alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "예", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        button3.setImageResource(R.drawable.washeru);
+                        button3.setImageResource(R.drawable.my);
                         washer_num = "3";
                         button3.setEnabled(false);
                         change_state(userid, washer_num);
@@ -177,7 +178,7 @@ public class SubActivity extends AppCompatActivity {
                 alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "예", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        button4.setImageResource(R.drawable.washeru);
+                        button4.setImageResource(R.drawable.my);
                         washer_num = "4";
                         button4.setEnabled(false);
                         change_state(userid, washer_num);
@@ -205,7 +206,7 @@ public class SubActivity extends AppCompatActivity {
                 alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "예", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        button5.setImageResource(R.drawable.washeru);
+                        button5.setImageResource(R.drawable.my);
                         washer_num = "5";
                         button5.setEnabled(false);
                         change_state(userid, washer_num);
@@ -233,7 +234,7 @@ public class SubActivity extends AppCompatActivity {
                 alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "예", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        button6.setImageResource(R.drawable.washeru);
+                        button6.setImageResource(R.drawable.my);
                         washer_num = "6";
                         button6.setEnabled(false);
                         change_state(userid, washer_num);
@@ -261,7 +262,7 @@ public class SubActivity extends AppCompatActivity {
                 alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "예", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        button7.setImageResource(R.drawable.washeru);
+                        button7.setImageResource(R.drawable.my);
                         washer_num = "7";
                         button7.setEnabled(false);
                         change_state(userid, washer_num);
@@ -289,7 +290,7 @@ public class SubActivity extends AppCompatActivity {
                 alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "예", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        button8.setImageResource(R.drawable.washeru);
+                        button8.setImageResource(R.drawable.my);
                         washer_num = "8";
                         button8.setEnabled(false);
                         change_state(userid, washer_num);
@@ -317,7 +318,7 @@ public class SubActivity extends AppCompatActivity {
                 alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "예", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        button9.setImageResource(R.drawable.dryu);
+                        button9.setImageResource(R.drawable.my);
                         washer_num = "9";
                         button9.setEnabled(false);
                         change_state(userid, washer_num);
@@ -345,7 +346,7 @@ public class SubActivity extends AppCompatActivity {
                 alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "예", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        button10.setImageResource(R.drawable.dryu);
+                        button10.setImageResource(R.drawable.my);
                         washer_num = "10";
                         button10.setEnabled(false);
                         change_state(userid, washer_num);
@@ -373,7 +374,7 @@ public class SubActivity extends AppCompatActivity {
                 alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "예", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        button11.setImageResource(R.drawable.dryu);
+                        button11.setImageResource(R.drawable.my);
                         washer_num = "11";
                         button11.setEnabled(false);
                         change_state(userid, washer_num);
@@ -401,7 +402,7 @@ public class SubActivity extends AppCompatActivity {
                 alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "예", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        button12.setImageResource(R.drawable.dryu);
+                        button12.setImageResource(R.drawable.my);
                         washer_num = "12";
                         button12.setEnabled(false);
                         change_state(userid, washer_num);
@@ -429,7 +430,7 @@ public class SubActivity extends AppCompatActivity {
                 alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "예", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        button13.setImageResource(R.drawable.dryu);
+                        button13.setImageResource(R.drawable.my);
                         washer_num = "13";
                         button13.setEnabled(false);
                         change_state(userid, washer_num);
@@ -513,15 +514,22 @@ public class SubActivity extends AppCompatActivity {
             while(count < jsonArray.length()){
                 JSONObject object = jsonArray.getJSONObject(count);
                 washerSTATE[count] = object.getInt("washerSTATE");
-                System.out.println("state"+count +": " + washerSTATE[count]);
+                w_userID[count]=object.getString("userID");
+                System.out.println("state"+count +": " + washerSTATE[count]+w_userID[count]);
                 count++;
             }
+            System.out.println(userid);
             //1번 세탁기 상태
             if(washerSTATE[0]==0){
                 button1.setImageResource(R.drawable.whasherusi);
             }
             else{
-                button1.setImageResource(R.drawable.washeru);
+                if(w_userID[0].equals(userid)){
+                    button1.setImageResource(R.drawable.my);
+                }
+                else {
+                    button1.setImageResource(R.drawable.washeru);
+                }
                 button1.setEnabled(false);
             }
 
@@ -530,7 +538,12 @@ public class SubActivity extends AppCompatActivity {
                 button2.setImageResource(R.drawable.whasherusi);
             }
             else{
-                button2.setImageResource(R.drawable.washeru);
+                if(w_userID[1].equals(userid)){
+                    button2.setImageResource(R.drawable.my);
+                }
+                else {
+                    button2.setImageResource(R.drawable.washeru);
+                }
                 button2.setEnabled(false);
             }
 
@@ -539,7 +552,12 @@ public class SubActivity extends AppCompatActivity {
                 button3.setImageResource(R.drawable.whasherusi);
             }
             else{
-                button3.setImageResource(R.drawable.washeru);
+                if(w_userID[2].equals(userid)){
+                    button3.setImageResource(R.drawable.my);
+                }
+                else {
+                    button3.setImageResource(R.drawable.washeru);
+                }
                 button3.setEnabled(false);
             }
 
@@ -548,7 +566,12 @@ public class SubActivity extends AppCompatActivity {
                 button4.setImageResource(R.drawable.whasherusi);
             }
             else{
-                button4.setImageResource(R.drawable.washeru);
+                if(w_userID[3].equals(userid)){
+                    button4.setImageResource(R.drawable.my);
+                }
+                else {
+                    button4.setImageResource(R.drawable.washeru);
+                }
                 button4.setEnabled(false);
             }
 
@@ -557,7 +580,12 @@ public class SubActivity extends AppCompatActivity {
                 button5.setImageResource(R.drawable.whasherusi);
             }
             else{
-                button5.setImageResource(R.drawable.washeru);
+                if(w_userID[4].equals(userid)){
+                    button5.setImageResource(R.drawable.my);
+                }
+                else {
+                    button5.setImageResource(R.drawable.washeru);
+                }
                 button5.setEnabled(false);
             }
 
@@ -566,7 +594,12 @@ public class SubActivity extends AppCompatActivity {
                 button6.setImageResource(R.drawable.whasherusi);
             }
             else{
-                button6.setImageResource(R.drawable.washeru);
+                if(w_userID[5].equals(userid)){
+                    button6.setImageResource(R.drawable.my);
+                }
+                else {
+                    button6.setImageResource(R.drawable.washeru);
+                }
                 button6.setEnabled(false);
             }
             //7번 세탁기 상태
@@ -574,7 +607,12 @@ public class SubActivity extends AppCompatActivity {
                 button7.setImageResource(R.drawable.whasherusi);
             }
             else{
-                button7.setImageResource(R.drawable.washeru);
+                if(w_userID[6].equals(userid)){
+                    button7.setImageResource(R.drawable.my);
+                }
+                else {
+                    button7.setImageResource(R.drawable.washeru);
+                }
                 button7.setEnabled(false);
             }
             //8번 세탁기 상태
@@ -582,7 +620,12 @@ public class SubActivity extends AppCompatActivity {
                 button8.setImageResource(R.drawable.whasherusi);
             }
             else{
-                button8.setImageResource(R.drawable.washeru);
+                if(w_userID[7].equals(userid)){
+                    button8.setImageResource(R.drawable.my);
+                }
+                else {
+                    button8.setImageResource(R.drawable.washeru);
+                }
                 button8.setEnabled(false);
             }
             //9번 세탁기 상태
@@ -591,7 +634,12 @@ public class SubActivity extends AppCompatActivity {
                 button9.setImageResource(R.drawable.dryusi);
             }
             else{
-                button9.setImageResource(R.drawable.dryu);
+                if(w_userID[8].equals(userid)){
+                    button9.setImageResource(R.drawable.my);
+                }
+                else {
+                    button9.setImageResource(R.drawable.dryu);
+                }
                 button9.setEnabled(false);
             }
             //10번 세탁기 상태
@@ -599,7 +647,12 @@ public class SubActivity extends AppCompatActivity {
                 button10.setImageResource(R.drawable.dryusi);
             }
             else{
-                button10.setImageResource(R.drawable.dryu);
+                if(w_userID[9].equals(userid)){
+                    button10.setImageResource(R.drawable.my);
+                }
+                else {
+                    button10.setImageResource(R.drawable.dryu);
+                }
                 button10.setEnabled(false);
             }
             //11번 세탁기 상태
@@ -607,7 +660,12 @@ public class SubActivity extends AppCompatActivity {
                 button11.setImageResource(R.drawable.dryusi);
             }
             else{
-                button11.setImageResource(R.drawable.dryu);
+                if(w_userID[10].equals(userid)){
+                    button11.setImageResource(R.drawable.my);
+                }
+                else {
+                    button11.setImageResource(R.drawable.dryu);
+                }
                 button11.setEnabled(false);
             }
             //12번 세탁기 상태
@@ -615,7 +673,12 @@ public class SubActivity extends AppCompatActivity {
                 button12.setImageResource(R.drawable.dryusi);
             }
             else{
-                button12.setImageResource(R.drawable.dryu);
+                if(w_userID[11].equals(userid)){
+                    button12.setImageResource(R.drawable.my);
+                }
+                else {
+                    button12.setImageResource(R.drawable.dryu);
+                }
                 button12.setEnabled(false);
             }
             //13번 세탁기 상태
@@ -623,7 +686,12 @@ public class SubActivity extends AppCompatActivity {
                 button13.setImageResource(R.drawable.dryusi);
             }
             else{
-                button13.setImageResource(R.drawable.dryu);
+                if(w_userID[12].equals(userid)){
+                    button13.setImageResource(R.drawable.my);
+                }
+                else {
+                    button13.setImageResource(R.drawable.dryu);
+                }
                 button13.setEnabled(false);
             }
 
