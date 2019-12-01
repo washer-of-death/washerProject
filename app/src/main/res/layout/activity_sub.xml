@@ -27,7 +27,9 @@
                     android:layout_height="80dp"
                     android:background="@drawable/whasherusi"
                     />
+
                 <TextView
+                    android:id="@+id/txt1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@+id/button1"
@@ -35,7 +37,7 @@
                     android:layout_alignRight="@+id/button1"
                     android:layout_alignBottom="@+id/button1"
                     android:gravity="center"
-                    android:text=""
+                    android:textSize="20sp"
                     />
 
             </RelativeLayout>
@@ -51,6 +53,7 @@
                     android:background="@drawable/whasherusi"
                     />
                 <TextView
+                    android:id="@+id/txt2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@+id/button2"
@@ -58,7 +61,7 @@
                     android:layout_alignRight="@+id/button2"
                     android:layout_alignBottom="@+id/button2"
                     android:gravity="center"
-                    android:text=""
+                    android:textSize="20sp"
                     />
 
             </RelativeLayout>
@@ -73,6 +76,7 @@
                     android:background="@drawable/whasherusi"
                     />
                 <TextView
+                    android:id="@+id/txt3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@+id/button3"
@@ -80,7 +84,7 @@
                     android:layout_alignRight="@+id/button3"
                     android:layout_alignBottom="@+id/button3"
                     android:gravity="center"
-                    android:text=""
+                    android:textSize="20sp"
                     />
             </RelativeLayout>
 
@@ -122,7 +126,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/TextView4"
+                    android:id="@+id/txt4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@+id/button4"
@@ -130,7 +134,7 @@
                     android:layout_alignRight="@+id/button4"
                     android:layout_alignBottom="@+id/button4"
                     android:gravity="center"
-                    android:text="" />
+                    android:textSize="20sp"/>
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -143,6 +147,7 @@
                     android:background="@drawable/whasherusi"
                     />
                 <TextView
+                    android:id="@+id/txt5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@+id/button5"
@@ -150,7 +155,7 @@
                     android:layout_alignRight="@+id/button5"
                     android:layout_alignBottom="@+id/button5"
                     android:gravity="center"
-                    android:text=""
+                    android:textSize="20sp"
                     />
             </RelativeLayout>
             <RelativeLayout
@@ -165,6 +170,7 @@
                     android:background="@drawable/whasherusi"
                     />
                 <TextView
+                    android:id="@+id/txt6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@+id/button6"
@@ -172,7 +178,7 @@
                     android:layout_alignRight="@+id/button6"
                     android:layout_alignBottom="@+id/button6"
                     android:gravity="center"
-                    android:text=""
+                    android:textSize="20sp"
                     />
             </RelativeLayout>
             <RelativeLayout
@@ -188,6 +194,7 @@
                     android:background="@drawable/whasherusi"
                     />
                 <TextView
+                    android:id="@+id/txt7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@+id/button7"
@@ -195,7 +202,7 @@
                     android:layout_alignRight="@+id/button7"
                     android:layout_alignBottom="@+id/button7"
                     android:gravity="center"
-                    android:text=""
+                    android:textSize="20sp"
                     />
 
             </RelativeLayout>
@@ -211,6 +218,7 @@
                     android:background="@drawable/whasherusi"
                     />
                 <TextView
+                    android:id="@+id/txt8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@+id/button8"
@@ -218,7 +226,7 @@
                     android:layout_alignRight="@+id/button8"
                     android:layout_alignBottom="@+id/button8"
                     android:gravity="center"
-                    android:text=""
+                    android:textSize="20sp"
                     />
             </RelativeLayout>
 
@@ -241,6 +249,7 @@
                     android:background="@drawable/dryusi"
                     />
                 <TextView
+                    android:id="@+id/txt9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@+id/button9"
@@ -248,7 +257,7 @@
                     android:layout_alignRight="@+id/button9"
                     android:layout_alignBottom="@+id/button9"
                     android:gravity="center"
-                    android:text=""
+                    android:textSize="20sp"
                     />
             </RelativeLayout>
             <RelativeLayout
@@ -263,6 +272,7 @@
                     android:background="@drawable/dryusi"
                     />
                 <TextView
+                    android:id="@+id/txt10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@+id/button10"
@@ -270,7 +280,7 @@
                     android:layout_alignRight="@+id/button10"
                     android:layout_alignBottom="@+id/button10"
                     android:gravity="center"
-                    android:text=""
+                    android:textSize="20sp"
                     />
 
             </RelativeLayout>
@@ -286,6 +296,7 @@
                     android:background="@drawable/dryusi"
                     />
                 <TextView
+                    android:id="@+id/txt11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@+id/button11"
@@ -293,7 +304,7 @@
                     android:layout_alignRight="@+id/button11"
                     android:layout_alignBottom="@+id/button11"
                     android:gravity="center"
-                    android:text=""
+                    android:textSize="20sp"
                     />
             </RelativeLayout>
             <RelativeLayout
@@ -308,6 +319,7 @@
                     android:background="@drawable/dryusi"
                     />
                 <TextView
+                    android:id="@+id/txt12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@+id/button12"
@@ -315,7 +327,7 @@
                     android:layout_alignRight="@+id/button12"
                     android:layout_alignBottom="@+id/button12"
                     android:gravity="center"
-                    android:text=""
+                    android:textSize="20sp"
                     />
             </RelativeLayout>
             <RelativeLayout
@@ -330,6 +342,7 @@
                     android:background="@drawable/dryusi"
                     />
                 <TextView
+                    android:id="@+id/txt13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@+id/button13"
@@ -337,8 +350,7 @@
                     android:layout_alignRight="@+id/button13"
                     android:layout_alignBottom="@+id/button13"
                     android:gravity="center"
-                    android:text=""
-                    />
+                    android:textSize="20sp"/>
 
             </RelativeLayout>
 

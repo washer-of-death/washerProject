@@ -41,11 +41,13 @@ public class SubActivity extends AppCompatActivity {
     private Toast toast;
     SharedPreferences shared;
     ImageView button1,button2,button3,button4,button5,button6,button7,button8,button9,button10,button11,button12,button13;
+    TextView txt1,txt2,txt3,txt4,txt5,txt6,txt7,txt8,txt9,txt10,txt11,txt12,txt13;
     String userid;
     String washer_num= "0";
     String myJSON;
     int [] washerSTATE = new int[13];
     String[] w_userID = new String[13];
+    String[] washerEND = new String[13];
     String url2;
 
     @Override
@@ -69,6 +71,19 @@ public class SubActivity extends AppCompatActivity {
         button11 = (ImageView)findViewById(R.id.button11);
         button12 = (ImageView)findViewById(R.id.button12);
         button13 = (ImageView)findViewById(R.id.button13);
+        txt1 = (TextView)findViewById(R.id.txt1);
+        txt2 = (TextView)findViewById(R.id.txt2);
+        txt3 = (TextView)findViewById(R.id.txt3);
+        txt4 = (TextView)findViewById(R.id.txt4);
+        txt5 = (TextView)findViewById(R.id.txt5);
+        txt6 = (TextView)findViewById(R.id.txt6);
+        txt7 = (TextView)findViewById(R.id.txt7);
+        txt8 = (TextView)findViewById(R.id.txt8);
+        txt9 = (TextView)findViewById(R.id.txt9);
+        txt10 = (TextView)findViewById(R.id.txt10);
+        txt11 = (TextView)findViewById(R.id.txt11);
+        txt12 = (TextView)findViewById(R.id.txt12);
+        txt13 = (TextView)findViewById(R.id.txt13);
 
         url2 ="https://scv0319.cafe24.com/songi/washer_DefaultState.php";
         getData(url2);
@@ -515,7 +530,8 @@ public class SubActivity extends AppCompatActivity {
                 JSONObject object = jsonArray.getJSONObject(count);
                 washerSTATE[count] = object.getInt("washerSTATE");
                 w_userID[count]=object.getString("userID");
-                System.out.println("state"+count +": " + washerSTATE[count]+w_userID[count]);
+                washerEND[count]=object.getString("washerEND");
+                System.out.println("state"+count +": " + washerSTATE[count]+w_userID[count]+washerEND[count]);
                 count++;
             }
             System.out.println(userid);
@@ -530,6 +546,7 @@ public class SubActivity extends AppCompatActivity {
                 else {
                     button1.setImageResource(R.drawable.washeru);
                 }
+                txt1.setText(washerEND[0].substring(5,16));
                 button1.setEnabled(false);
             }
 
@@ -544,6 +561,7 @@ public class SubActivity extends AppCompatActivity {
                 else {
                     button2.setImageResource(R.drawable.washeru);
                 }
+                txt2.setText(washerEND[1].substring(5,16));
                 button2.setEnabled(false);
             }
 
@@ -558,6 +576,7 @@ public class SubActivity extends AppCompatActivity {
                 else {
                     button3.setImageResource(R.drawable.washeru);
                 }
+                txt3.setText(washerEND[2].substring(5,16));
                 button3.setEnabled(false);
             }
 
@@ -572,6 +591,7 @@ public class SubActivity extends AppCompatActivity {
                 else {
                     button4.setImageResource(R.drawable.washeru);
                 }
+                txt4.setText(washerEND[3].substring(5,16));
                 button4.setEnabled(false);
             }
 
@@ -586,6 +606,7 @@ public class SubActivity extends AppCompatActivity {
                 else {
                     button5.setImageResource(R.drawable.washeru);
                 }
+                txt5.setText(washerEND[4].substring(5,16));
                 button5.setEnabled(false);
             }
 
@@ -600,6 +621,7 @@ public class SubActivity extends AppCompatActivity {
                 else {
                     button6.setImageResource(R.drawable.washeru);
                 }
+                txt6.setText(washerEND[5].substring(5,16));
                 button6.setEnabled(false);
             }
             //7번 세탁기 상태
@@ -613,6 +635,7 @@ public class SubActivity extends AppCompatActivity {
                 else {
                     button7.setImageResource(R.drawable.washeru);
                 }
+                txt7.setText(washerEND[6].substring(5,16));
                 button7.setEnabled(false);
             }
             //8번 세탁기 상태
@@ -626,6 +649,7 @@ public class SubActivity extends AppCompatActivity {
                 else {
                     button8.setImageResource(R.drawable.washeru);
                 }
+                txt8.setText(washerEND[7].substring(5,16));
                 button8.setEnabled(false);
             }
             //9번 세탁기 상태
@@ -640,6 +664,7 @@ public class SubActivity extends AppCompatActivity {
                 else {
                     button9.setImageResource(R.drawable.dryu);
                 }
+                txt9.setText(washerEND[8].substring(5,16));
                 button9.setEnabled(false);
             }
             //10번 세탁기 상태
@@ -653,6 +678,7 @@ public class SubActivity extends AppCompatActivity {
                 else {
                     button10.setImageResource(R.drawable.dryu);
                 }
+                txt10.setText(washerEND[9].substring(5,16));
                 button10.setEnabled(false);
             }
             //11번 세탁기 상태
@@ -666,6 +692,7 @@ public class SubActivity extends AppCompatActivity {
                 else {
                     button11.setImageResource(R.drawable.dryu);
                 }
+                txt11.setText(washerEND[10].substring(5,16));
                 button11.setEnabled(false);
             }
             //12번 세탁기 상태
@@ -679,6 +706,7 @@ public class SubActivity extends AppCompatActivity {
                 else {
                     button12.setImageResource(R.drawable.dryu);
                 }
+                txt12.setText(washerEND[11].substring(5,16));
                 button12.setEnabled(false);
             }
             //13번 세탁기 상태
@@ -692,6 +720,7 @@ public class SubActivity extends AppCompatActivity {
                 else {
                     button13.setImageResource(R.drawable.dryu);
                 }
+                txt13.setText(washerEND[12].substring(5,16));
                 button13.setEnabled(false);
             }
 
