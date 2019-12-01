@@ -64,13 +64,15 @@
             android:id="@+id/signup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@color/colorPrimary"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:background="#00ff0000"
             android:importantForAutofill="no"
             android:text="@string/my_new"
+            android:textColor="@color/colorText"
+            android:stateListAnimator="@null"
             tools:ignore="LabelFor"
             tools:targetApi="o" />
-
-    </LinearLayout>
+</LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

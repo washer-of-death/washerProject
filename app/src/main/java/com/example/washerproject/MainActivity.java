@@ -3,6 +3,7 @@ package com.example.washerproject;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         passText = (EditText) findViewById(R.id.passwordText);
         nameButton = (Button) findViewById(R.id.nameButton);
         signup = (Button)findViewById(R.id.signup);
+        signup.setPaintFlags(signup.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
 
         nameButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 user_password = passText.getText().toString();
 
                 if (user_id.isEmpty() || user_password.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "fill details", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "로그인 실패!", Toast.LENGTH_SHORT).show();
 
                 }
                 else {
