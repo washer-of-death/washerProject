@@ -9,13 +9,13 @@
     android:orientation="horizontal">
 
 <LinearLayout
-    android:layout_width="80dp"
+    android:layout_width="100dp"
     android:layout_height="60dp">
     <Button
         android:layout_width="76dp"
         android:layout_height="40dp"
         android:layout_marginTop="17dp"
-        android:layout_marginLeft="7dp"
+        android:layout_marginLeft="15dp"
         android:background="@color/colorPrimary"
         android:text="@string/my_logout"
         android:textColor="@color/colorText"/>
@@ -52,6 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_marginLeft="7dp"
             android:layout_marginRight="40dp"
             android:orientation="horizontal">
             <RelativeLayout
@@ -263,7 +264,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginLeft="205dp">
+            android:layout_marginLeft="216dp">
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
