@@ -3,6 +3,7 @@ package com.example.washerproject;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,7 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import androidx.core.app.ActivityCompat;
 
 import com.android.volley.Request;
@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
     // 첫 번째 뒤로가기 버튼을 누를 때 표시
     private Toast toast;
     String user_id, user_password;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         passText = (EditText) findViewById(R.id.passwordText);
         nameButton = (Button) findViewById(R.id.nameButton);
         signup = (Button)findViewById(R.id.signup);
+        signup.setPaintFlags(signup.getPaintFlags()| Paint.UNDERLINE_TEXT_FLAG);
 
         nameButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,13 +54,14 @@ public class MainActivity extends AppCompatActivity {
                 user_password = passText.getText().toString();
 
                 if (user_id.isEmpty() || user_password.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "fill details", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "빈 칸이 존재합니다!", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     login(user_id, user_password);
                 }
             }
         });
+
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,13 +88,13 @@ public class MainActivity extends AppCompatActivity {
                     editor.putString("userid",userid2);
                     editor.putString("userpassword",userpassword2);
                     editor.commit();
-                    Toast.makeText(getApplicationContext(), "로그인 성공!", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(MainActivity.this,SubActivity.class);
+                    Toast.makeText(getApplicationContext(), "로그인 성공!" , Toast.LENGTH_SHORT).show();
                     startActivity(intent);
                 }
                 catch (JSONException e) {
-                    Toast.makeText(getApplicationContext(), "로그인 실패!", Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "로그인 실패!" , Toast.LENGTH_SHORT).show();
                 }
             }
         }, new Response.ErrorListener() {
@@ -107,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+
         // 기존 뒤로가기 버튼의 기능을 막기위해 주석처리 또는 삭제
         // super.onBackPressed();
 

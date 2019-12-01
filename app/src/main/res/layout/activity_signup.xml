@@ -149,19 +149,19 @@
         >
 
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="130dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="40dp"
+            android:layout_width="170dp"
+            android:layout_height="110dp"
+            android:layout_marginLeft="37dp"
+            android:layout_marginTop="50dp"
             android:background="@drawable/footstep">
 
         </ImageView>
 
         <ImageView
-            android:layout_width="230dp"
-            android:layout_height="230dp"
-            android:layout_marginTop="140dp"
-            android:layout_marginLeft="170dp"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginLeft="200dp"
             android:background="@drawable/blackcat">
         </ImageView>
 
