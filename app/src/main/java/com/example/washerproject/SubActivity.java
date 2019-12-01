@@ -30,6 +30,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -518,13 +520,40 @@ public class SubActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
+    public void washer_complete(final int washerSTATE, final String washer_num){
+        RequestQueue requestQueue = Volley.newRequestQueue(SubActivity.this);
+        String url = "https://scv0319.cafe24.com/songi/washer_Complete.php";
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.i("Hitesh",""+response);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.i("Hitesh",""+error);
+                Toast.makeText(SubActivity.this, ""+error, Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> stringMap = new HashMap<>();
+                stringMap.put("washerSTATE",Integer.toString(washerSTATE));
+                stringMap.put("washer_num", washer_num);
+                return stringMap;
+            }
+        };
+        requestQueue.add(stringRequest);
+    }
+
     public void showList(){
         try{
             JSONObject jsonObject = new JSONObject(myJSON);
             JSONArray jsonArray = jsonObject.getJSONArray("response");
 
             int count = 0;
-
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date now = new Date();
             //JSON 배열 길이만큼 반복문을 실행
             while(count < jsonArray.length()){
                 JSONObject object = jsonArray.getJSONObject(count);
@@ -532,9 +561,15 @@ public class SubActivity extends AppCompatActivity {
                 w_userID[count]=object.getString("userID");
                 washerEND[count]=object.getString("washerEND");
                 System.out.println("state"+count +": " + washerSTATE[count]+w_userID[count]+washerEND[count]);
+                //washerEND[count]가 현재 시간보다 이전일 때
+                Date washer_end = dateFormat.parse(washerEND[count]);
+                if(now.getTime() >= washer_end.getTime()) {
+                    //washerSTATE[count]를 0으로 바꾼다.
+                    washerSTATE[count] = 0;
+                    washer_complete(washerSTATE[count], washer_num);
+                }
                 count++;
             }
-            System.out.println(userid);
             //1번 세탁기 상태
             if(washerSTATE[0]==0){
                 button1.setImageResource(R.drawable.whasherusi);
