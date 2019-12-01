@@ -2,6 +2,7 @@ package com.example.washerproject;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,10 +12,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -49,11 +51,23 @@ public class SubActivity extends AppCompatActivity {
     String[] w_userID = new String[13];
     String[] washerEND = new String[13];
     String url2;
-
+    SwipeRefreshLayout layout;
+    WebView webView;
     @Override
     protected void onCreate(Bundle bundle){
         super.onCreate(bundle);
         setContentView(R.layout.activity_sub);
+        layout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
+
+        layout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                //새로고침 작업 실행...
+                getData(url2);
+                showList();
+                layout.setRefreshing(false);
+            }
+        });
 
         shared = getSharedPreferences("Mypref", MODE_PRIVATE);
         userid = shared.getString("userid", "");
@@ -538,6 +552,7 @@ public class SubActivity extends AppCompatActivity {
             //1번 세탁기 상태
             if(washerSTATE[0]==0){
                 button1.setImageResource(R.drawable.whasherusi);
+                txt1.setText("");
             }
             else{
                 if(w_userID[0].equals(userid)){
@@ -553,6 +568,7 @@ public class SubActivity extends AppCompatActivity {
             //2번 세탁기 상태
             if(washerSTATE[1]==0){
                 button2.setImageResource(R.drawable.whasherusi);
+                txt2.setText("");
             }
             else{
                 if(w_userID[1].equals(userid)){
@@ -568,6 +584,7 @@ public class SubActivity extends AppCompatActivity {
             //3번 세탁기 상태
             if(washerSTATE[2]==0){
                 button3.setImageResource(R.drawable.whasherusi);
+                txt3.setText("");
             }
             else{
                 if(w_userID[2].equals(userid)){
@@ -583,6 +600,7 @@ public class SubActivity extends AppCompatActivity {
             //4번 세탁기 상태
             if(washerSTATE[3]==0){
                 button4.setImageResource(R.drawable.whasherusi);
+                txt4.setText("");
             }
             else{
                 if(w_userID[3].equals(userid)){
@@ -598,6 +616,7 @@ public class SubActivity extends AppCompatActivity {
             //5번 세탁기 상태
             if(washerSTATE[4]==0){
                 button5.setImageResource(R.drawable.whasherusi);
+                txt5.setText("");
             }
             else{
                 if(w_userID[4].equals(userid)){
@@ -613,6 +632,7 @@ public class SubActivity extends AppCompatActivity {
             //6번 세탁기 상태
             if(washerSTATE[5]==0){
                 button6.setImageResource(R.drawable.whasherusi);
+                txt6.setText("");
             }
             else{
                 if(w_userID[5].equals(userid)){
@@ -627,6 +647,7 @@ public class SubActivity extends AppCompatActivity {
             //7번 세탁기 상태
             if(washerSTATE[6]==0){
                 button7.setImageResource(R.drawable.whasherusi);
+                txt7.setText("");
             }
             else{
                 if(w_userID[6].equals(userid)){
@@ -641,6 +662,7 @@ public class SubActivity extends AppCompatActivity {
             //8번 세탁기 상태
             if(washerSTATE[7]==0){
                 button8.setImageResource(R.drawable.whasherusi);
+                txt8.setText("");
             }
             else{
                 if(w_userID[7].equals(userid)){
@@ -656,6 +678,7 @@ public class SubActivity extends AppCompatActivity {
 
             if(washerSTATE[8]==0){
                 button9.setImageResource(R.drawable.dryusi);
+                txt9.setText("");
             }
             else{
                 if(w_userID[8].equals(userid)){
@@ -670,6 +693,7 @@ public class SubActivity extends AppCompatActivity {
             //10번 세탁기 상태
             if(washerSTATE[9]==0){
                 button10.setImageResource(R.drawable.dryusi);
+                txt10.setText("");
             }
             else{
                 if(w_userID[9].equals(userid)){
@@ -684,6 +708,7 @@ public class SubActivity extends AppCompatActivity {
             //11번 세탁기 상태
             if(washerSTATE[10]==0){
                 button11.setImageResource(R.drawable.dryusi);
+                txt11.setText("");
             }
             else{
                 if(w_userID[10].equals(userid)){
@@ -698,6 +723,7 @@ public class SubActivity extends AppCompatActivity {
             //12번 세탁기 상태
             if(washerSTATE[11]==0){
                 button12.setImageResource(R.drawable.dryusi);
+                txt12.setText("");
             }
             else{
                 if(w_userID[11].equals(userid)){
@@ -712,6 +738,7 @@ public class SubActivity extends AppCompatActivity {
             //13번 세탁기 상태
             if(washerSTATE[12]==0){
                 button13.setImageResource(R.drawable.dryusi);
+                txt13.setText("");
             }
             else{
                 if(w_userID[12].equals(userid)){
