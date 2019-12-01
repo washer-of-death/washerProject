@@ -586,13 +586,12 @@ public class SubActivity extends AppCompatActivity {
                 washerSTATE[count] = object.getInt("washerSTATE");
                 w_userID[count]=object.getString("userID");
                 washerEND[count]=object.getString("washerEND");
-                System.out.println("state"+count +": " + washerSTATE[count]+w_userID[count]+washerEND[count]);
                 //washerEND[count]가 현재 시간보다 이전일 때
                 Date washer_end = dateFormat.parse(washerEND[count]);
                 if(now.getTime() >= washer_end.getTime()) {
                     //washerSTATE[count]를 0으로 바꾼다.
                     washerSTATE[count] = 0;
-                    washer_complete(Integer.toString(count));
+                    washer_complete(Integer.toString(count+1));
                 }
                 count++;
             }
