@@ -12,11 +12,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -51,6 +53,8 @@ public class SubActivity extends AppCompatActivity {
     String[] w_userID = new String[13];
     String[] washerEND = new String[13];
     String url2;
+    Button logout;
+
     SwipeRefreshLayout layout;
     WebView webView;
     @Override
@@ -99,8 +103,17 @@ public class SubActivity extends AppCompatActivity {
         txt12 = (TextView)findViewById(R.id.txt12);
         txt13 = (TextView)findViewById(R.id.txt13);
 
+        logout = (Button)findViewById(R.id.logout);
+
         url2 ="https://scv0319.cafe24.com/songi/washer_DefaultState.php";
         getData(url2);
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -552,7 +565,6 @@ public class SubActivity extends AppCompatActivity {
             //1번 세탁기 상태
             if(washerSTATE[0]==0){
                 button1.setImageResource(R.drawable.whasherusi);
-                txt1.setText("");
             }
             else{
                 if(w_userID[0].equals(userid)){
